@@ -8,7 +8,15 @@ public class Car extends Transport implements CheckEngineTransport {
 
     @Override
     public void updateTyre() {
-        System.out.println("Меняем покрышку у автомобиля");
+        System.out.println("Обслуживаем " + getModelName());
+        int count = 0;
+        for (int i = 0; i < getWheelsCount(); i++) {
+            System.out.println("Меняем покрышку у легкового автомобиля");
+            count++;
+        }
+        System.out.printf("Всего поменяно покрышек: %d%n", count);
+        this.checkEngine();
+        System.out.println();
     }
 
     @Override
